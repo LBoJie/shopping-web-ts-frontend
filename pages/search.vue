@@ -26,7 +26,7 @@
         </div>
         <div class="w-full py-8" v-if="!isEndOfList" v-loading="loading" element-loading-text="取得更多商品中"></div>
     </div>
-    <el-empty description="此分類尚無商品" v-else>
+    <el-empty description="查無商品" v-else>
         <el-button type="primary" @click="router.push('/category/0')">查看所有商品</el-button>
     </el-empty>
 </template>
@@ -62,7 +62,6 @@ watch([sort, order], () => {
 watch(
     () => route.query.keyword,
     () => {
-        console.log("ch keyword");
         startIdx.value = 0;
         products.value = [];
         isEndOfList.value = false;
@@ -80,14 +79,12 @@ const load = async () => {
             },
             onResponse({ response }) {
                 if (response.status === 200) {
-                    console.log(response._data.responseData);
                     if (response._data.responseData.length === 0) {
                         isEndOfList.value = true;
                         return
                     }
                     startIdx.value += 16;
                     products.value = products.value.concat(response._data.responseData);
-                    console.log(products.value);
                 }
             }
         })

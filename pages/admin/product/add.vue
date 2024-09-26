@@ -118,7 +118,7 @@ const submitForm = async (formEl: FormInstance | undefined) => {
             formData.append("status", ruleForm.status ? "1" : "0");
             if (editorData.delta) {
                 formData.append("descriptionDelta", editorData.delta);
-                formData.append("descriptionHTML", editorData.html);
+                formData.append("descriptionHtml", editorData.html);
             }
             try {
                 await $fetch(`${apiBaseUrl}/admin/product`, {

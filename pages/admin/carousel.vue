@@ -317,7 +317,6 @@ const removeImg = () => {
 const addCarousel = () => {
     activeId.value = 0
     ruleFormRef.value!.resetFields();
-    console.log(ruleForm);
 }
 let originalCarousel: Carousel | null = null;
 
@@ -380,8 +379,6 @@ const getCarousels = async (categoryId: number) => {
                     carousels.value = response._data.responseData
 
                 }
-                // console.log(carousels.value);
-                console.log(ruleForm);
             }
         });
     } catch (error: any) {

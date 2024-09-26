@@ -74,7 +74,7 @@ interface RuleForm {
     imgUrl: string
     status: string
     descriptionDelta: string
-    descriptionHTML: string
+    descriptionHtml: string
 }
 type editorData = {
     delta: string
@@ -91,7 +91,7 @@ const ruleForm = reactive<RuleForm>({
     imgUrl: '',
     status: '',
     descriptionDelta: '',
-    descriptionHTML: ''
+    descriptionHtml: ''
 })
 
 
@@ -117,7 +117,7 @@ const submitForm = async (formEl: FormInstance | undefined) => {
             const formData = new FormData();
             const editorData: editorData = editor.value.getContent();
             ruleForm.descriptionDelta = editorData.delta;
-            ruleForm.descriptionHTML = editorData.html;
+            ruleForm.descriptionHtml = editorData.html;
             const patch = compare(product, ruleForm);
             formData.append("jsonPatch", JSON.stringify(patch));
             if (uploadImg) {
@@ -233,7 +233,7 @@ onMounted(async () => {
                     ruleForm.name = product.name;
                     ruleForm.status = product.status;
                     ruleForm.descriptionDelta = product.descriptionDelta;
-                    ruleForm.descriptionHTML = product.descriptionHTML;
+                    ruleForm.descriptionHtml = product.descriptionHtml;
                     editor.value.setContent(JSON.parse(product.descriptionDelta));
                 }
             }

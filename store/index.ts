@@ -114,7 +114,6 @@ export const useMemberStore = defineStore(
       const index = cart.value.findIndex((item) => item.productId === cartItem.productId);
       if (index !== -1) {
         if (cart.value[index].quantity + cartItem.quantity > cartItem.inventory) {
-          console.log("狀態一");
           ElNotification({
             title: "Warning",
             message: "購物車內數量已達庫存上限",
@@ -124,7 +123,6 @@ export const useMemberStore = defineStore(
         }
       } else {
         if (cartItem.quantity > cartItem.inventory) {
-          console.log("狀態二");
           ElNotification({
             title: "Warning",
             message: "已達庫存上限",
@@ -168,10 +166,8 @@ export const useMemberStore = defineStore(
         }
       } else {
         if (index !== -1) {
-          console.log("修改數量");
           cart.value[index].quantity += cartItem.quantity;
         } else {
-          console.log("新增購物車商品");
           cart.value.push(cartItem);
         }
         ElNotification({
@@ -226,7 +222,6 @@ export const useMemberStore = defineStore(
       const apiBaseUrl = useRuntimeConfig().public.apiBaseUrl;
       if (member.value) {
         try {
-          console.log("object");
           await $fetch(`${apiBaseUrl}/cart/${productId}`, {
             method: "DELETE",
             headers: {
@@ -251,7 +246,6 @@ export const useMemberStore = defineStore(
           }
         }
       } else {
-        console.log("deleteCartItem");
         const index = cart.value.findIndex((item) => item.productId === productId);
         if (index !== -1) {
           cart.value.splice(index, 1);

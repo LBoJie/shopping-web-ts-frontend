@@ -17,7 +17,8 @@
                 <span class="w-[15%]">數量</span>
                 <span class="w-[15%] ml-auto">小計</span>
             </div>
-            <div class="flex my-8 items-center pr-8 mobile:my-4 mobile:flex-wrap" v-for="item in cart" :key="item.productId">
+            <div class="flex my-8 items-center pr-8 mobile:my-4 mobile:flex-wrap" v-for="item in cart"
+                :key="item.productId">
                 <div class="w-[45%] flex items-center mobile:w-full mobile:mb-4">
                     <img class="w-[80px] h-[80px] object-cover mr-8 shrink-0"
                         :src="item.imgUrl || '/images/defaultProduct.png'" alt="">{{ item.name }}
@@ -53,6 +54,7 @@ const orderStore = useOrderStore();
 const cart = ref<CartItem[]>([]);
 const totalAmount = ref(0);
 const sendOrder = async () => {
+    showLoading();
     try {
         await $fetch<ApiResponse>(`${apiBaseUrl}/cart/check`, {
             method: 'GET',
@@ -60,6 +62,24 @@ const sendOrder = async () => {
                 Authorization: `Bearer ${memberStore.accessToken}`
             }
         })
+
+    }
+    catch (error: any) {
+        hideLoading();
+        if (error.response.status === 400) {
+            let warningText = error.response._data.responseData.join("<br />");
+            ElMessageBox.alert(warningText, '購物車商品不可結帳', {
+                dangerouslyUseHTMLString: true,
+            })
+        }
+        else if (error.response.status === 401) {
+            handleRefreshToken();
+        }
+        else {
+            handleError(error);
+        }
+    }
+    try {
         await $fetch(`${apiBaseUrl}/order`, {
             method: "POST",
             body: {
@@ -84,19 +104,15 @@ const sendOrder = async () => {
             })
             .catch(() => { });
     } catch (error: any) {
-        if (error.response.status === 400) {
-            let warningText = error.response._data.responseData.join("<br />");
-            ElMessageBox.alert(warningText, '購物車商品不可結帳', {
-                dangerouslyUseHTMLString: true,
-            })
-        }
-        else if (error.response.status === 401) {
+        hideLoading();
+        if (error.response.status === 401) {
             handleRefreshToken();
         }
         else {
             handleError(error);
         }
     }
+    hideLoading();
 }
 onMounted(async () => {
     if (!orderStore.order || !memberStore.member) {

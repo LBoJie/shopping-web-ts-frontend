@@ -272,7 +272,6 @@ interface Option {
 const product = ref<Option[]>([])
 // const promotionProduct = ref([])
 const filterMethod = (query: string, item: TransferDataItem) => {
-    console.log(item);
     return item.label.toLowerCase().includes(query.toLowerCase())
 }
 
@@ -292,8 +291,6 @@ const getProducts = async () => {
                         const inOtherPromotion = item.inPromotion ? true : false
                         return { key: item.id, label: `${item.id}-${item.name} ${inOtherPromotion ? `活動ID: ${item.inPromotion}` : ''}`, disabled: inOtherPromotion }
                     });
-                    // product.value = generateData();
-                    console.log(product.value);
                 }
             }
         })

@@ -27,7 +27,6 @@ if (error.value) {
 }
 
 const carousels = ref<Carousel[]>(data.value!.responseData);
-console.log(carousels.value);
 
 
 

@@ -19,7 +19,6 @@
 import type { FormInstance, FormRules } from 'element-plus';
 const apiBaseUrl = useRuntimeConfig().public.apiBaseUrl;
 const route = useRoute();
-console.log(route.query.token);
 type FormData = {
     password: string
     confirmPassword: string

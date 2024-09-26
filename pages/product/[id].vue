@@ -56,7 +56,6 @@ if (error.value) {
     })
 }
 const product = ref<Product>(data.value!.responseData);
-console.log(product.value);
 const handleChange = () => {
     if (cartItem.value.quantity === product.value.inventory) {
         ElNotification({
@@ -79,7 +78,6 @@ const cartItem = ref({
 const cartLoading = ref(false)
 const addToCart = async () => {
     cartLoading.value = true;
-    console.log(cartItem.value);
     await memberStore.addToCart(cartItem.value);
     cartLoading.value = false;
 }

@@ -48,11 +48,19 @@
         </div>
     </ClientOnly>
 
-    <div class="w-[1200px] mx-auto p-8 mobile:w-full mobile:p-4">
+    <div class="w-[1200px] min-h-[700px] mx-auto p-8 mobile:w-full mobile:p-4 mobile:min-h-[450px]">
         <slot />
     </div>
-    <div class="bg-[#F5F7FA] h-[300px]">
-        <h1 class="text-center">i am footer</h1>
+    <div class="bg-[#F5F7FA] p-8">
+        <NuxtLink to="/category/0" class="hover:text-primary hover:underline block">查看所有商品</NuxtLink>
+        <NuxtLink to="https://github.com/LBoJie/shopping-web-ts-frontend"
+            class="hover:text-primary hover:underline block">
+            GitHub
+            前端</NuxtLink>
+        <NuxtLink to="https://github.com/LBoJie/shopping-web-ts-backend"
+            class="hover:text-primary hover:underline block">
+            GitHub
+            後端</NuxtLink>
     </div>
 </template>
 

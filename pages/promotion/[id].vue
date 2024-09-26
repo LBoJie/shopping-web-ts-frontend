@@ -93,7 +93,6 @@ if (error.value) {
 }
 const loading = ref(false);
 startIdx.value += 16;
-console.log(data.value!.responseData);
 const promotion = ref<Promotion>(data.value!.responseData);
 const promotionIsWithinRange = ref(false);
 const today = new Date();
@@ -149,7 +148,6 @@ const addToCart = async (product: Product) => {
         status: product.status
     }
     cartLoading.value = true;
-    console.log(product);
     await memberStore.addToCart(cartItem);
     cartLoading.value = false;
 }

@@ -7,7 +7,7 @@
             <el-row class="w-4/12">
                 <el-col>
                     <el-menu class="border-none" unique-opened active-text-color="#ffd04b" background-color="#545c64"
-                        text-color="#fff" default-active="1" @open="handleOpen" @close="handleClose">
+                        text-color="#fff" default-active="1">
                         <el-sub-menu index="1">
                             <template #title>
                                 <span class="text-xl">商品</span>
@@ -79,12 +79,6 @@
 import { useMemberStore } from '@/store/index';
 const memberStore = useMemberStore();
 const router = useRoute();
-const handleOpen = (key: string, keyPath: string[]) => {
-    console.log(key, keyPath)
-}
-const handleClose = (key: string, keyPath: string[]) => {
-    console.log(key, keyPath)
-}
 onBeforeMount(() => {
     if (!memberStore.member || memberStore.member.role !== "admin") {
         navigateTo({ path: "/login", query: { redirect: router.path } });

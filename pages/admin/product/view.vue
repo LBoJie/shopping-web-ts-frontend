@@ -74,7 +74,6 @@ type SortParams = {
     order: string | null;
 };
 const handleSort = ({ prop, order }: SortParams) => {
-    console.log(prop, order);
     if (order === null) {
         sortField.value = 'id';
         sortOrder.value = 'ASC';
@@ -101,7 +100,6 @@ const getProduct = async () => {
                 if (response.status === 200) {
                     tableData.value = response._data.responseData.products;
                     totalProductsCount.value = response._data.responseData.totalProductsCount;
-                    console.log(tableData.value);
                 }
             }
         })

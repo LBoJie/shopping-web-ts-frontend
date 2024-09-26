@@ -134,7 +134,6 @@ const register = async (formEl: FormInstance | undefined) => {
                     },
                     onResponse({ response }) {
                         if (response.status === 200) {
-                            console.log(response._data.responseData);
                             memberStore.updateMember(response._data.responseData)
                         }
                     }
