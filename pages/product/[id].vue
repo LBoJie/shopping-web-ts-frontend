@@ -38,7 +38,6 @@
     </div>
     <el-divider />
     <div class="w-full" v-if="product.descriptionHtml" v-html="product.descriptionHtml"></div>
-    <div class="w-full" v-else>預設內容(當無內容時)</div>
 </template>
 
 <script setup lang="ts">

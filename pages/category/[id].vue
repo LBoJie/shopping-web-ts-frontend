@@ -1,9 +1,9 @@
 <template>
     <div class="category flex justify-around items-center mb-8 h-8">
         <NuxtLink :class="{ 'active': category === '0' }" to="/category/0">全部商品</NuxtLink>
-        <NuxtLink :class="{ 'active': category === '1' }" to="/category/1">分類一</NuxtLink>
-        <NuxtLink :class="{ 'active': category === '2' }" to="/category/2">分類二</NuxtLink>
-        <NuxtLink :class="{ 'active': category === '3' }" to="/category/3">分類三</NuxtLink>
+        <NuxtLink :class="{ 'active': category === '1' }" to="/category/1">美食</NuxtLink>
+        <NuxtLink :class="{ 'active': category === '2' }" to="/category/2">飲品</NuxtLink>
+        <NuxtLink :class="{ 'active': category === '3' }" to="/category/3">調味料</NuxtLink>
     </div>
     <div class="flex justify-end mb-8">
         <button class="mr-4" @click="sort = 'id'; order = 'ASC'"
