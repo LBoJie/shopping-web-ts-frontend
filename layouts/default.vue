@@ -29,7 +29,7 @@
                 </div>
                 <div class="flex items-center">
                     <NuxtLink to="/">
-                        <img src="/images/logo.png?2024" alt="">
+                        <img class="w-[160px] h-[85px] mobile:h-[51px]" src="/images/logo.webp" alt="">
                     </NuxtLink>
                     <el-input v-model="search" placeholder="搜尋商品名稱" class="w-[300px] ml-4" @keyup.enter="searchProduct">
                         <template #append>
@@ -56,11 +56,16 @@
         <NuxtLink to="https://github.com/LBoJie/shopping-web-ts-frontend"
             class="hover:text-primary hover:underline block">
             GitHub
-            前端</NuxtLink>
+            前端
+        </NuxtLink>
         <NuxtLink to="https://github.com/LBoJie/shopping-web-ts-backend"
             class="hover:text-primary hover:underline block">
             GitHub
-            後端</NuxtLink>
+            後端
+        </NuxtLink>
+        <p class="mt-4">
+            本網站為學習和個人作品集展示用途，網站中的所有內容僅供練習使用，並不構成實際的商業交易或購買行為。網站中的任何產品或服務展示僅為範例，並非真正的商品或服務。我們不對網站內容的準確性或完整性負責。
+        </p>
     </div>
 </template>
 
