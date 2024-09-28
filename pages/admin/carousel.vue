@@ -71,14 +71,6 @@ import _ from 'lodash'
 import { useMemberStore } from '@/store/index';
 import draggable from 'vuedraggable';
 
-// type Carousel = {
-//     id?: number
-//     category: number
-//     href: string
-//     imgUrl: string
-//     order?: number
-// }
-
 const memberStore = useMemberStore();
 const apiBaseUrl = useRuntimeConfig().public.apiBaseUrl;
 definePageMeta({

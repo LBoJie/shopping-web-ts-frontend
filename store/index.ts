@@ -107,7 +107,6 @@ export const useMemberStore = defineStore(
     };
 
     const addToCart = async (cartItem: CartItem): Promise<boolean> => {
-      //避免pass by reference 更動到原始cartItem
       cartItem = { ...cartItem };
       const isSuccess = false;
       const apiBaseUrl = useRuntimeConfig().public.apiBaseUrl;
@@ -285,7 +284,6 @@ type Order = {
   address: string;
   notes?: string;
 };
-// store/index.js
 export const useOrderStore = defineStore(
   "order",
   () => {
@@ -295,7 +293,6 @@ export const useOrderStore = defineStore(
     };
     return {
       order,
-      // sendOrder,
       clearOrder,
     };
   },

@@ -1,75 +1,22 @@
-# Nuxt 3 Minimal Starter
+# 購物網站開發專案
 
-Look at the [Nuxt 3 documentation](https://nuxt.com/docs/getting-started/introduction) to learn more.
+## 部署網址
+- [購物網站前端](https://shopping-web-frontend.onrender.com)
 
-## Setup
+## 專案描述
+開發一個功能完善的購物網站，提供用戶商品瀏覽、編輯、活動管理、訂單管理及輪播控制等功能。
 
-Make sure to install the dependencies:
+## 主要功能
 
-```bash
-# npm
-npm install
+### 商品管理
+- 用戶可以新增、編輯和刪除商品資訊，包含商品名稱、價格、描述及圖片。
 
-# pnpm
-pnpm install
+### 活動管理
+- 設計與管理促銷活動，包含設定活動時間、折扣及適用商品。
 
-# yarn
-yarn install
+### 訂單管理
+- 用戶可以查看訂單狀態及詳細資訊，後端管理員可對訂單進行更新與處理。
 
-# bun
-bun install
-```
+### 輪播控制
+- 實現首頁輪播圖功能，能動態更新顯示促銷活動或熱銷商品。
 
-## Development Server
-
-Start the development server on `http://localhost:3000`:
-
-```bash
-# npm
-npm run dev
-
-# pnpm
-pnpm run dev
-
-# yarn
-yarn dev
-
-# bun
-bun run dev
-```
-
-## Production
-
-Build the application for production:
-
-```bash
-# npm
-npm run build
-
-# pnpm
-pnpm run build
-
-# yarn
-yarn build
-
-# bun
-bun run build
-```
-
-Locally preview production build:
-
-```bash
-# npm
-npm run preview
-
-# pnpm
-pnpm run preview
-
-# yarn
-yarn preview
-
-# bun
-bun run preview
-```
-
-Check out the [deployment documentation](https://nuxt.com/docs/getting-started/deployment) for more information.

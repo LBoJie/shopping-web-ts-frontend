@@ -29,7 +29,7 @@
                 </div>
                 <div class="flex items-center">
                     <NuxtLink to="/">
-                        <img src="/images/logo.png" alt="">
+                        <img src="/images/logo.png?2024" alt="">
                     </NuxtLink>
                     <el-input v-model="search" placeholder="搜尋商品名稱" class="w-[300px] ml-4" @keyup.enter="searchProduct">
                         <template #append>

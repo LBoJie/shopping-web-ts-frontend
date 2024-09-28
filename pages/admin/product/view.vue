@@ -65,7 +65,6 @@ watch(search, () => {
     getProduct()
 })
 const handleEdit = (index: number, row: Product) => {
-    //前往編輯葉面 韓html編輯器
     navigateTo(`/admin/product/edit/${row.id}`)
 }
 

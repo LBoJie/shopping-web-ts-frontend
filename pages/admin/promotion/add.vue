@@ -171,9 +171,7 @@ const submitForm = async (formEl: FormInstance | undefined) => {
             formData.append("discountType", ruleForm.discountType);
             formData.append("discountValue", ruleForm.discountValue.toString());
             formData.append("isActive", ruleForm.isActive ? "1" : "0");
-            // if (ruleForm.productIds && ruleForm.productIds.length > 0) {
             formData.append("productIds", JSON.stringify(ruleForm.productIds));
-            // }
             try {
                 await $fetch(`${apiBaseUrl}/admin/promotion`, {
                     method: 'POST',
@@ -270,7 +268,6 @@ interface Option {
 }
 
 const product = ref<Option[]>([])
-// const promotionProduct = ref([])
 const filterMethod = (query: string, item: TransferDataItem) => {
     return item.label.toLowerCase().includes(query.toLowerCase())
 }

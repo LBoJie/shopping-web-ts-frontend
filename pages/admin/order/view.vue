@@ -58,7 +58,6 @@ const tableData = computed(() => {
     return filterData.value.slice(startIndex, endIndex)
 })
 const handleEdit = (index: number, row: EditProduct) => {
-    //前往編輯葉面 韓html編輯器
     navigateTo(`/admin/order/${row.id}`)
 }
 const handleStatus = (status: string) => {
