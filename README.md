@@ -4,8 +4,7 @@
 - [購物網站前端](https://shopping-web-frontend.onrender.com)
 
 ## 專案描述
-Nuxt 3, TypeScript
-開發一個功能完善的購物網站，提供用戶商品瀏覽、編輯、活動管理、訂單管理及輪播控制等功能。
+使用 Nuxt 3, TypeScript 開發一個功能完善的購物網站，提供用戶商品瀏覽、編輯、活動管理、訂單管理及輪播控制等功能。
 
 ## 主要功能
 
