@@ -37,7 +37,7 @@
         </div>
     </div>
     <el-divider />
-    <div class="w-full" v-if="product.descriptionHtml" v-html="product.descriptionHtml"></div>
+    <div class="w-full ql-editor" v-if="product.descriptionHtml" v-html="product.descriptionHtml"></div>
 </template>
 
 <script setup lang="ts">
