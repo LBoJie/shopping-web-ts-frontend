@@ -104,6 +104,10 @@ if (!promotionIsWithinRange.value) {
 }
 const isEndOfList = ref(false);
 watch([sort, order], () => {
+    if (!promotionIsWithinRange.value) {
+        promotion.value.promotionProducts = [];
+        return
+    }
     startIdx.value = 0;
     promotion.value.promotionProducts = [];
     isEndOfList.value = false;
@@ -178,6 +182,7 @@ const addToCart = async (product: Product) => {
 
     img {
         width: 100%;
+        height: 250px;
         object-fit: cover;
     }
 
@@ -202,6 +207,12 @@ const addToCart = async (product: Product) => {
         margin-left: 0;
         margin-right: 0;
         margin-bottom: 16px;
+
+        img {
+         
+            height: 150px;
+         
+        }
     }
 }
 </style>
