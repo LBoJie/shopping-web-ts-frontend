@@ -29,7 +29,7 @@
                     </h5>
                     <p class="flex items-center justify-between mt-auto text-warning">
                         ${{ product.discountPrice }}
-                        <el-button type="success" :loading="cartLoading" @click.prevent="addToCart(product)">
+                        <el-button type="success" :disabled="cartLoading" @click.prevent="addToCart(product)">
                             <el-icon size="18">
                                 <ShoppingCart />
                             </el-icon>
