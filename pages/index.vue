@@ -1,5 +1,5 @@
 <template>
-    <Swiper class="h-[400px]" :modules="[SwiperAutoplay, SwiperNavigation, SwiperPagination]" :slides-per-view="1"
+    <Swiper class="h-[400px] mb-4" :modules="[SwiperAutoplay, SwiperNavigation, SwiperPagination]" :slides-per-view="1"
         :loop="true" :autoplay="{
             delay: 5000,
             disableOnInteraction: true,
@@ -10,9 +10,12 @@
             </NuxtLink>
         </SwiperSlide>
     </Swiper>
+    <el-button type="primary" @click="router.push('/category/0')">查看所有商品</el-button>
+
 </template>
 
 <script setup lang="ts">
+const router = useRouter();
 const apiBaseUrl = useRuntimeConfig().public.apiBaseUrl;
 const { data, error } = await useFetch<ApiResponse<Carousel[]>>(`${apiBaseUrl}/carousel/1`,
     {
