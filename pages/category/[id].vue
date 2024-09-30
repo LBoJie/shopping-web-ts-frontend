@@ -146,7 +146,7 @@ const load = async () => {
         margin-right: 1%;
         margin-bottom: 3%;
         img{
-            height: auto;
+            height: 150px;
         }
     }
 }
