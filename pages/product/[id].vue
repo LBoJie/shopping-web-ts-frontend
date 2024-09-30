@@ -1,5 +1,5 @@
 <template>
-    <div class="text-sm ">
+    <div class="text-sm mb-4">
         <NuxtLink class="hover:text-primary hover:underline" to="/category/0">
             所有分類
         </NuxtLink> /
@@ -7,11 +7,10 @@
             {{ product?.categoryName }}
         </NuxtLink> /
         <NuxtLink>{{ product?.name }}</NuxtLink>
-
     </div>
-
     <div class="flex items-center mobile:flex-wrap">
-        <img :src="product.imgUrl || '/images/defaultProduct.png'" alt="" class="w-[500px] h-[500px] object-cover mobile:w-full mobile:h-auto">
+        <img :src="product.imgUrl || '/images/defaultProduct.png'" alt=""
+            class="w-[500px] h-[500px] object-cover mobile:w-full mobile:h-[300px] mobile:mb-4">
         <div class="grow ml-8 mobile:ml-0">
             <h3 class="mb-4 text-info text-3xl font-bold">{{ product?.name }}</h3>
             <h5 v-if="product.promotion" class="text-3xl font-bold">
@@ -37,7 +36,7 @@
         </div>
     </div>
     <el-divider />
-    <div class="w-full ql-editor" v-if="product.descriptionHtml" v-html="product.descriptionHtml"></div>
+    <div class="w-full ql-editor p-0" v-if="product.descriptionHtml" v-html="product.descriptionHtml"></div>
 </template>
 
 <script setup lang="ts">
